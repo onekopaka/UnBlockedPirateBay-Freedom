@@ -7,13 +7,13 @@ include("includes/dn.php");
 $loadhomepage = "0";
 
 if($_GET['loadurl'] == ""){
-$loadurl = file_get_contents("homepage.html");
-$loadhomepage = "1";
+	$loadurl = file_get_contents("homepage.html");
+	$loadhomepage = "1";
 }
 
 if($_GET['loadurl'] == "/"){
-$loadurl = file_get_contents("homepage.html");
-$loadhomepage = "1";
+	$loadurl = file_get_contents("homepage.html");
+	$loadhomepage = "1";
 }
 
 if(isset($_GET['loadurl']) && ($_GET['loadurl'] != "/")){
@@ -29,6 +29,10 @@ $thisdomain = $_SERVER['HTTP_HOST'];
 $loadurl = str_replace("SDFSDFSDF23423", "$thisdomain", $loadurl);
 $loadurl = str_replace("<-TITLEINSETTINGSFILE->", "$pagetitle", $loadurl);
 $loadurl = remove_bloat_after_proxify("$loadurl");
+
+if($loadhomepage == 1) {
+	$loadurl = str_replace("#FOOTER_INSERT#", "$footer", $loadurl);
+}
 
 echo($loadurl);
 ?>
