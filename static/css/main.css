@@ -17,7 +17,7 @@ body {
 
 /* sprites */
 .sp {
-	background: url('//static.thepiratebay.se/img/latest.png') no-repeat;
+	background: url('../img/latest.png') no-repeat;
 	display: inline-block;
 	height: 12px;
 	width: 11px;
@@ -138,7 +138,7 @@ h2 {
 /* top navigation */
 #logo a
 {
-	background: url('//static.thepiratebay.se/img/latest.png') 0px 0px no-repeat;
+	background: url('../img/latest.png') 0px 0px no-repeat;
 	height: 86px;
 	width: 82px;
 	margin: -12px 10px 0 0;
@@ -253,7 +253,7 @@ footer #stats {
 	text-align: center;
 }
 #fp h1 a {
-	background: url('//static.thepiratebay.se/img/tpb.jpg') no-repeat;
+	background: url('../img/tpb.jpg') no-repeat;
 	margin: 0 auto;
 	display: block;
 	border: 0;
@@ -279,7 +279,7 @@ footer #stats {
     padding: 3px;
 	width: 390px;
 }
-.https_form { background: url('//static.thepiratebay.se/img/icon-https.gif') no-repeat 100% 50% #ffffe0; }
+.https_form { background: url('../img/icon-https.gif') no-repeat 100% 50% #ffffe0; }
 
 #fp #inp span {
     width: 1em;
