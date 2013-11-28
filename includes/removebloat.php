@@ -10,8 +10,13 @@ function remove_bloat($toremove){
 	$toremove = str_replace("//static.thepiratebay.se/","static/" , $toremove);
 
 	// Remove Ads
-	$toremove = str_replace("http://clkads.com/","blank.php?blank=", $toremove);
-
+	$toremove = preg_replace('~<iframe src="http://cdn[0-9]+\.adexprt\.com[^"]+" width="468" height="60" frameborder="0" scrolling="no"></iframe>~', '', $toremove);
+	$toremove = preg_replace('~<iframe src="http://cdn[0-9]+\.adexprt\.com[^"]+" width="728" height="90" frameborder="0" scrolling="no"></iframe>~', '', $toremove);
+	
+	// ESPECIALLY THE POPUNDERS
+	$toremove = str_replace("clickAnywhere:true","clickAnywhere:false", $toremove);
+	$toremove = str_replace("clickAnywhere   : true","clickAnywhere   : false", $toremove);
+	
 	// We aren't actually TPB, we are a mirror, lets change the <title> on the homepage only</title>
 	$toremove = str_replace("<title>Download music, movies, games, software! The Pirate Bay - The galaxy's most resilient BitTorrent site</title>","<title>$pagetitle</title>", $toremove);
 
